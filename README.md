@@ -22,7 +22,9 @@
 
 ## 一、准备工作
 
-### 1. 环境准备(仅推荐，不要求，可做参考)
+**注：准备工作主要是作为参考，不做要求，可以跳过，这里涉及到一些你写项目的时候可能会需要的知识**
+
+### 1. 环境准备
 
 + 推荐使用 Linux or Mac 作为开发系统
 
@@ -48,126 +50,113 @@
 
 + 安装一款后台接口测试工具，如：Postman
 
-## 二、热身
+### 2. 语言 
 
-### 1. 学习所选择的语言
-
-+ Python
+- Python
   - [廖雪峰的Python3教程](https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000)
-         [廖雪峰的Python2教程](https://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000)
+        [廖雪峰的Python2教程](https://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000)
   - [Python3入门指南-官方中文](http://www.pythondoc.com/pythontutorial3/)
-         [Python2入门指南-官方中文](http://www.pythondoc.com/pythontutorial27/index.html)
+        [Python2入门指南-官方中文](http://www.pythondoc.com/pythontutorial27/index.html)
   - [Python 代码规范(Google 开源项目风格指南)](http://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/python_style_rules/) (必需)
-
-+ Go
-
+- Go
   - [官方链接](https://golang.org/)
   - [官方中文教程](https://tour.go-zh.org/welcome/1)
   - [语言规范](https://go-zh.org/ref/spec)
+- PHP
+- Java
+  - [菜鸟教程](http://www.runoob.com/java/java-tutorial.html) 
+- Node
+  - [菜鸟教程-Node](http://www.runoob.com/nodejs/nodejs-install-setup.html)
+  - [Node10.5 中文文档](http://nodejs.cn/api/) 
+  - [Node 官方文档](https://nodejs.org/api/)
+- Kotlin
+  - [官方教程](http://kotlinlang.org/docs/tutorials/)
 
-+ PHP
+### 3. 框架
 
-+ Java
-
-  + [菜鸟教程](http://www.runoob.com/java/java-tutorial.html) 
-
-+ Node
-
-  + [菜鸟教程-Node](http://www.runoob.com/nodejs/nodejs-install-setup.html)
-  + [Node10.5 中文文档](http://nodejs.cn/api/) 
-  + [Node 官方文档](https://nodejs.org/api/)
-
-+ Kotlin
-
-  + [官方教程](http://kotlinlang.org/docs/tutorials/)
-
-### 2. 学习基本前端知识和前后端交互
-
-+ 基本 HTML、CSS 知识
-
-  不强制要求，可以等你们用到的时候再学
-
-+ 基本 JavaScript
-
-  不强制要求，可以等你们用到的时候再学
-
-+ 了解 HTTP基本知识
-
-  如：HTTP 方法：GET、POST、PUT、UPDATE等，HTTP状态码：404，500， 200，301等，HTTP URL，HTTP 基本传输格式：json，form等
-
-+ 了解前后端如何交互
-
-  如：前端如何获取后端返回的数据，如何发送请求，后端如何根据前端发过来的请求，回应请求，如何辨别不同的请求
-
-### 3. 技术选型及热身
-
-#### 框架选型：
-
-+ Python
+- Python
 
   可能会用到 uWSGI 启动
 
-  + Flask
-  + Django
-  + sanic
+  - Flask
+  - Django
+  - sanic
 
-+ Go
+- Go
 
   其实原生的以及封装的很好了
 
-  + Gin
-  + Echo
-  + Beego
+  - Gin
+  - Echo
+  - Beego
 
-+ PHP
+- PHP
 
-+ Java
+- Java
 
-  + SSM + Spring Boot
+  Servlet 写小一点的东西也行
 
-  + Play
+  - SSM + Spring Boot
+
+  - Play
 
     https://github.com/playframework/playframework
 
-  + Spark
+  - Spark
 
     https://github.com/perwendel/spark/
 
-+ Node
+- Node
 
-  + express
-  + Koa
+  - express
+  - Koa
 
-+ Kotlin
+- Kotlin
+
+### 4. 涉及知识
 
 #### 认证：
 
 熟悉以下三种前后端认证方式，一般在登录时使用
 
-+ cookie
-+ session
-+ JWT
+- cookie
+- session
+- JWT
 
-#### 加密算法了解：
+#### 加密算法：
 
 不同需求，对应不同加密方式，先了解
 
-+ 对称加密
-+ 非对称加密
-+ 哈希算法
+- 对称加密
+- 非对称加密
+- 哈希算法
 
-### 4. 学习相关数据库
+### 4. 基本前端知识和前后端交互
+
+- 基本 HTML、CSS 知识
+
+- 基本 JavaScript
+
+- HTTP基本知识
+
+  如：HTTP 方法：GET、POST、PUT、UPDATE等，HTTP状态码：404，500， 200，301等，HTTP URL，HTTP 基本传输格式：json，form等
+
+- 前后端如何交互
+
+  如：前端如何获取后端返回的数据，如何发送请求，后端如何根据前端发过来的请求，回应请求，如何辨别不同的请求
+
+### 5. 数据库
 
 学习基本操作（增删改查）即可，以后可自行研究
 
-+ MySQL/MongoDB/PostGreSQL
-+ Redis
+- MySQL/MongoDB/PostGreSQL
+- Redis
 
 可在菜鸟教程上速成
 
-### 5. 小项目热身（未定）
+## 二、热身
 
-#### 简易用户管理系统：
+#### 简易成户管理系统：
 
 具体要求：
 
@@ -177,9 +166,17 @@
 
   注：登录之后注意用户认证问题，如：从浏览器退出此页面之后，再次进入页面如何辨认此用户，登录过期等问题
 
++ 普通成员注册
+
+  注册之后，需要管理员审核通过才能成为组员
+
++ 查看未审核的成员，审核成员注册是否通过
+
 + 添加成员
 
-  成员信息如下：用户ID（字符串），密码（要求在数据库中加密存储），邮箱，手机号，昵称，组别
+  成员必须信息如下：用户ID（字符串），密码（要求在数据库中加密存储），邮箱，手机号，昵称，组别
+
+  其他信息自行思考
 
 + 删除成员
 

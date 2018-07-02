@@ -1,5 +1,3 @@
-2018冰岩程序组夏令营(未完)
-
 ### 前言：
 
 + 不会的话先 Google ，搜索完之后还是没有解决再来问我们
@@ -58,17 +56,29 @@
   - [Python3入门指南-官方中文](http://www.pythondoc.com/pythontutorial3/)
         [Python2入门指南-官方中文](http://www.pythondoc.com/pythontutorial27/index.html)
   - [Python 代码规范(Google 开源项目风格指南)](http://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/python_style_rules/) (必需)
+
 - Go
   - [官方链接](https://golang.org/)
   - [官方中文教程](https://tour.go-zh.org/welcome/1)
   - [语言规范](https://go-zh.org/ref/spec)
+
 - PHP
+
+  + [PHP 代码规范](https://www.php-fig.org/psr/) 
+
 - Java
   - [菜鸟教程](http://www.runoob.com/java/java-tutorial.html) 
+  - Java 代码规范
+
 - Node
+
+  关键字：单线程，异步，回调地域，Promise，async/await
+
   - [菜鸟教程-Node](http://www.runoob.com/nodejs/nodejs-install-setup.html)
   - [Node10.5 中文文档](http://nodejs.cn/api/) 
-  - [Node 官方文档](https://nodejs.org/api/)
+  - [Node 官方文档](https://nodejs.org/api/) 
+  - [node 代码规范](https://github.com/dead-horse/node-style-guide) ，[google node 代码规范](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml) 
+
 - Kotlin
   - [官方教程](http://kotlinlang.org/docs/tutorials/)
 
@@ -135,15 +145,28 @@
 
 - 基本 HTML、CSS 知识
 
+  **关键字：**
+
+  + HTML：布局，表格表单，区块，元素，列表
+  + CSS：盒模型，样式表，选择器，浮动，定位
+
 - 基本 JavaScript
+
+  **关键字：事件，DOM操作，作用域，变量，函数**
+
+  注：前端可使用相关UI框架和 JS 框架（react，vue），以及一些比较好用的 js 包（如请求包 axios），可自行选择，具体可以咨询前端组的同学。
 
 - HTTP基本知识
 
   如：HTTP 方法：GET、POST、PUT、UPDATE等，HTTP状态码：404，500， 200，301等，HTTP URL，HTTP 基本传输格式：json，form等
 
+  **关键字：HTTP 方法，HTTP状态码，HTTP传输格式，HTTP头部**
+
 - 前后端如何交互
 
   如：前端如何获取后端返回的数据，如何发送请求，后端如何根据前端发过来的请求，回应请求，如何辨别不同的请求
+
+  **关键字： js 请求库(axios, fetch, superagent选其一，原生亦可)，URL， 域名，ip**
 
 ### 5. 数据库
 
@@ -156,7 +179,9 @@
 
 ## 二、热身
 
-#### 简易成户管理系统：
+注：前端能看就行，不是硬性要求
+
+#### 简易成员管理系统：
 
 具体要求：
 
@@ -186,7 +211,11 @@
 
 + 可以根据组别显示成员
 
+**关键字： 认证，数据库，成员管理**
+
 ## 三、项目（未定）
+
+注：前端能看就行，不是硬性要求
 
 ## 四、项目部署
 
@@ -215,8 +244,7 @@
 ### 1. 夏令营聚合
 
 + 冰岩程序组夏令营：https://github.com/tofar/bingyan-summer-camp2018
-+ 冰岩前端组夏令营：https://github.com/JamieMaple/bingyan-summer-camp-2018
-+ 冰岩移动组夏令营：
++ 冰岩前端组夏令营：https://github.com/BingyanStudioFE/summber-camp-2018
 + 冰岩产品组夏令营：
 + 冰岩运营组夏令营：
 + 冰岩产品组夏令营：
@@ -226,39 +254,55 @@
 
 #### Python：
 
-- [Python 基础教程](https://zhiguangxiong.gitbooks.io/python/content/di-2-zhang-lie-biao-he-yuan-zu/tong-yong-xu-lie-cao-zuo.html)
+- [Python 基础教程](https://zhiguangxiong.gitbooks.io/python/content/di-2-zhang-lie-biao-he-yuan-zu/tong-yong-xu-lie-cao-zuo.html) 
 
-  简介：
+  不推荐快速入门
 
 - [简明Python教程](https://bop.mol.uno/)
 
-  简介：
+- [Effective Python 中文版](https://guoruibiao.gitbooks.io/effective-python/content/) [Effective Python 原版](https://hacktec.gitbooks.io/effective-python/content/en/) 
 
-- [Effective Python 中文版](https://guoruibiao.gitbooks.io/effective-python/content/) [Effective Python 原版](https://hacktec.gitbooks.io/effective-python/content/en/)
-
-  简介：
+  很高质量的一本书，让你领略 Python 的一些哲学，以及一些 Python 的使用经验，适合有一定基础的 Python 选手
 
 - [Flask Web开发](https://item.jd.com/11594082.html) 
 
-  简介：
+  讲了很多 web 的基础知识，适合 web 入门
 
 #### Go:
 
 - [《The Go Programming Language》中文版](https://www.gitbook.com/book/yar999/gopl-zh/details)
+
 - [《Effective Go》中英双语版](https://www.gitbook.com/book/bingohuang/effective-go-zh-en/details)
+
 - [Go语言实战](http://download.csdn.net/download/truthurt/9858317)
-- [Go Web编程](https://wizardforcel.gitbooks.io/build-web-application-with-golang/content/index.html)
+
+- [Go Web编程](https://wizardforcel.gitbooks.io/build-web-application-with-golang/content/index.html) 
+
+  可以了解基本web开发，推荐入门
+
 - [Go入门指南](https://github.com/Unknwon/the-way-to-go_ZH_CN)
-- [echo 框架官方中文翻译](https://easy_mind.gitbooks.io/go-echo-gitbook/content/)
+
 - [雨痕的学习笔记](https://github.com/qyuhen/book)
+
+  一共两本，第二本讲原理多（如：go 的gc, 内存管理等），第一本适合入门
 
 #### PHP:
 
-#### Node:
+#### Node: 
+
++ 深入浅出 node
 
 #### JS:
 
++ [你不知道的JavaScript](https://github.com/getify/You-Dont-Know-JS) 上、中、下 
++ JS 高级程序设计
++ [ECMAScript 6 入门](http://es6.ruanyifeng.com/) 
+
 #### Java:
+
++ effective Java
++ Java 核心技术卷
++ 深入理解jvm虚拟机
 
 ### 3. 算法任务（夏令营不要求）
 
@@ -288,25 +332,31 @@
 
 + 。。。
 
+书籍推荐：
+
++ 《数据结构与算法分析 C语言描述》黑皮书，质量很高
++ 《算法 第四版》普林斯顿的书，好像还不错
++ 《算法导论》（理论比较多）
+
 ### 4. 后台相关学习
 
 + 面向对象和抽象的思想
 
 + 熟悉 Github，熟悉 git 版本管理工具的基本命令操作，如：clone, add, commit, push, pull, merge, branch, checkout, tag
 
-+ http 协议，可阅读《http权威指南》前三章
++ http 协议，主要阅读《http权威指南》前三章
 
 + tcp/ip协议，《计算机网络，自顶向下方法》tcp/ip协议至少要知道他的协议栈，每层是干嘛的，tcp连接建立、断开的过程，tcp/udp的区别
 
++ WebSocket、Socket、TCP、http，http2
+
 + Linux 常见操作学习，熟悉基本操作, 如：man, ls, mkdir, cd, cp, mv, scp, ssh, rm, ps, cat, head, tail, vim, wget, curl, chmod, chgrp, chown, sudo, grep
 
-+ 了解linux基本概念：用户组，权限，文件系统，软/硬连接，挂载，启动等
++ 了解 linux基本概念：用户组，权限，文件系统，软/硬连接，挂载，启动等
 
 + 了解 vim 基本操作，毕竟服务器上一般都是用vim操作，没有图像界面
 
 + 学习 shell 脚本程序
-
-  Linux 上偶尔还是会写一些帮助的脚本的
 
 + 正则表达式
 
@@ -316,7 +366,9 @@
 
 + 常见设计模式，如：MVC模式，装饰器模式
 
-+ 常见安全问题，怎么使用 F12
++ 常见安全问题
+
+  常用工具：浏览器 F12，抓包工具：Fiddler， wireshark
 
   - DDOS攻击
   - 中间人攻击
@@ -325,6 +377,32 @@
   - xss攻击
   - csrf
   - 远程脚本执行
+
++ 操作系统基础知识
+
+  基本特性：并发、共享、虚拟、异步
+
+  + CPU 进程调度，线程，进程
+
+  + 共享，**信号量，PV操作，锁**
+
+  + 内存管理
+
+    虚拟存储，段页式系统，缺页
+
+  + 文件系统，ELF文件
+
++ 分布式了解以及应用
+
+  + 数据库分布式
+
+  + 分布式常见问题
+
+    一致性问题，共识算法，FLP 不可能性原理，CAP 原理，ACID 原则，拜占庭问题，可靠性指标
+
+  + 分布式算法
+
+    Paxos 与 Raft
 
 ### 5. 相关建议
 

@@ -79,7 +79,7 @@
   - [菜鸟教程-Node](http://www.runoob.com/nodejs/nodejs-install-setup.html)
   - [Node10.5 中文文档](http://nodejs.cn/api/) 
   - [Node 官方文档](https://nodejs.org/api/) 
-  - [node 代码规范](https://github.com/dead-horse/node-style-guide) ，[google node 代码规范](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml) 
+  - [airbnb node 代码规范](https://github.com/airbnb/javascript) , [node 代码规范](https://github.com/dead-horse/node-style-guide)
 
 - Kotlin
   - [官方教程](http://kotlinlang.org/docs/tutorials/)
@@ -144,6 +144,8 @@
 - 哈希算法
 
 ### 4. 基本前端知识和前后端交互
+
+注：初学前端请使用 Chrome
 
 - 基本 HTML、CSS 知识
 

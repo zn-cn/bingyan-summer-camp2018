@@ -1,8 +1,10 @@
+# 2018 冰岩程序组夏令营
+
 ### 前言：
 
 + 不会的话先 Google ，搜索完之后还是没有解决再来问我们
 
-+ 第一天先 fork 仓库：https://github.com/tofar/bingyan-summer-camp2018，本次夏令营要求代码，日报周报等全部托管在 你们 fork 之后的 github 仓库上
++ 第一天先 fork 仓库：[bingyan-summer-camp2018](https://github.com/tofar/bingyan-summer-camp2018)，本次夏令营要求代码，日报周报等全部托管在 你们 fork 之后的 github 仓库上
 
   日报、周报不需要太多，只需要介绍每天学习了什么即可
 

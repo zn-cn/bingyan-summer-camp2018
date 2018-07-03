@@ -36,33 +36,23 @@
 
 - 目录结构推荐如下：
 
-  README.md   必须注明相关开发环境，以及一些特殊说明
-
-  .gitignore  忽略一些不需要的文件
-
-  client
-
-  前端代码，如果不用webpack之类的打包的话，直接一个 dist 文件夹即可
-
-  + dist
-
-    编译打包后的文件目录
-
-    + index.html
-    + css
-    + js
-
-  + src
-
-    源码
-
-  server
-
-  服务端代码
-
-  + src
-
-    源码
+  + README.md
+    必须注明相关开发环境，以及一些特殊说明
+  + .gitignore
+    忽略一些不需要的文件
+  + client
+      前端代码，如果不用webpack之类的打包的话，直接一个 dist 文件夹即可
+      + dist
+        编译打包后的文件目录
+        + index.html
+        + css
+        + js
+      + src
+        源码
+    + server
+      服务端代码
+      + src
+        源码
 
 ## 一、准备工作
 

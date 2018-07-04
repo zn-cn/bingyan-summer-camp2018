@@ -345,9 +345,10 @@
 
 + 冰岩程序组夏令营：https://github.com/tofar/bingyan-summer-camp2018
 + 冰岩前端组夏令营：https://github.com/BingyanStudioFE/summber-camp-2018
++ 冰岩移动组夏令营: https://github.com/Liujiaohan/bingyan-summer-camp2018
 + 冰岩产品组夏令营：
 + 冰岩运营组夏令营：
-+ 冰岩产品组夏令营：
++ 冰岩设计组夏令营:
 + 冰岩游戏组夏令营：
 
 ### 2. 书籍推荐

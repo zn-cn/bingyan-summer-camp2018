@@ -349,7 +349,7 @@
 + 冰岩产品组夏令营：
 + 冰岩运营组夏令营：
 + 冰岩设计组夏令营:
-+ 冰岩游戏组夏令营：
++ 冰岩游戏组夏令营：https://github.com/CurryPseudo/bingyan-summer-camp-2018
 
 ### 2. 书籍推荐
 

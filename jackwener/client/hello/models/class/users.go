@@ -10,7 +10,14 @@ type User struct {
 	Id       int `orm:"pk"` // 设置为主键，字段Id, Password首字母必须大写
 	Name     string
 	Password string
+	Nickname string
+	Email    string
+	Phone    string
+	Group    string
+	Status   string //管理员状态为1,普通用户状态为0,注册未认证用户状态为2
 }
+
+
 
 func (u *User) ReadDB() (err error) {
 	o := orm.NewOrm()
@@ -32,5 +39,6 @@ func (u *User) Update() (err error) {
 	_, err = o.Update(u)
 	return err
 }
+
 
 

@@ -7,57 +7,137 @@ import (
 	"github.com/labstack/echo"
 )
 
-type FormUser struct {
-	Id       string `json:"id" form:"id"query:"id"`
-	Password string `json:"password" form:"password"query:"password"`
-	Email    string `json:"email" form:"email" query:"email"`
-	Phone    string `json:"phone" form:"phone" query:"phone"`
-	Name     string `json:"name" form:"name" query:"name"`
-	Group    string `json:"group" form:"group" query:"group"`
-	Identity string `json:"identity" form:"identity" query:"identity"`
-}
-
-func SearchId(user model.User) {
-	return user.Id
-}
-
-func Cookie(c echo.Context) error {
-	cookie := new(http.Cookie)
-	cookie.Name = "username"
-	cookie.Value = SearchId(user)
-	cookie.Expires = time.Now().Add(24 * time.Hour)
-	c.SetCookie(cookie)
-	return c.String(http.StatusOK, "write a cookie")
-}
-
 func Request(c echo.Context) (err error) {
-	u := new(FormUser)
+	u := new(model.User)
 	if err = c.Bind(u); err != nil {
 		return
 	}
 	return c.JSON(http.StatusOK, u)
 }
 
-func ResponseJsonyes(c echo.Context) error {
-	u := &model.User{
-		status: true
+func Login(c echo.Context) error {
+	Request(c)
+	userInfo := map[string]string{
+		"id":       "",
+		"password": "",
 	}
-	return c.JSON(http.StatusOK, u)
-}
-
-func ResponseJsonno(c echo.Context) error {
-	u := &model.User{
-		status: false
-	}
-	return c.JSON(http.StatusOK, u)
-}
-
-func Login(user model.User) {
-	if user != nil {
-		Request(c)
-		Cookie(c)
-		ResponseJsonyes(c)
+	c.Bind(&userInfo)
+	if model.Login(userInfo) == true {
+		//userInfo  := map[string]string{
+		//	"id": "",
+		//	"pw": "",
+		//}
+		//c.Bind(&userInfo)
+		cookie := new(http.Cookie)
+		cookie.Name = "username"
+		cookie.Value = userInfo["id"]
+		cookie.Expires = time.Now().Add(24 * time.Hour)
+		c.SetCookie(cookie)
+		u := &model.User{
+			Name: "yes",
+		}
+		return c.JSON(http.StatusOK, u)
 	} else {
-		ResponseJsonno(c)
+		u := &model.User{
+			Name: "no",
+		}
+		return c.JSON(http.StatusOK, u)
 	}
+}
+
+func SignUp(c echo.Context) error {
+	Request(c)
+	userInfo := map[string]string{
+		"id":       "",
+		"password": "",
+		"email":    "",
+		"phone":    "",
+		"name":     "",
+		"group":    "",
+		"identity": "",
+		"status":   "0",
+	}
+	c.Bind(&userInfo)
+	if model.SignUp(userInfo) == true {
+		u := &model.User{
+			Name: "yes",
+		}
+		return c.JSON(http.StatusOK, u)
+	} else {
+		u := &model.User{
+			Name: "no",
+		}
+		return c.JSON(http.StatusOK, u)
+	}
+}
+
+func DeleteMember(c echo.Context) error {
+	Request(c)
+	userInfo := map[string]string{
+		"id":       "",
+		"password": "",
+		"email":    "",
+		"phone":    "",
+		"name":     "",
+		"group":    "",
+		"identity": "",
+		"status":   "1",
+	}
+	c.Bind(&userInfo)
+	model.DeleteMember(userInfo)
+	return c.NoContent(http.StatusOK)
+}
+
+func ShowGroup(c echo.Context) error {
+	Request(c)
+	userGroup := map[string]string{
+		"group": "",
+	}
+	c.Bind(&userGroup)
+	var user []model.User
+	user = model.ShowGroup(userGroup)
+	u := &user
+	return c.JSON(http.StatusOK, u)
+}
+
+func GetInformation(c echo.Context) error {
+	Request(c)
+	var member []model.User
+	model.GetInformation(member)
+	u := &member
+	return c.JSON(http.StatusOK, u)
+}
+
+func AddGroup(c echo.Context) error {
+	Request(c)
+	userInfo := map[string]string{
+		"id":       "",
+		"password": "",
+		"email":    "",
+		"phone":    "",
+		"name":     "",
+		"group":    "",
+		"identity": "",
+		"status":   "1",
+	}
+	c.Bind(&userInfo)
+	model.AddGroup(userInfo)
+	return c.NoContent(http.StatusOK)
+}
+
+func ChangeInformation(c echo.Context) error {
+	Request(c)
+	userInfo := map[string]string{
+		"id":       "",
+		"password": "",
+		"email":    "",
+		"phone":    "",
+		"name":     "",
+		"group":    "",
+		"identity": "",
+		"status":   "1",
+	}
+	c.Bind(&userInfo)
+	model.ChangeInformation(userInfo)
+	return c.NoContent(http.StatusOK)
 }

@@ -3,10 +3,13 @@ package main
 import "github.com/astaxie/beego"
 
 import (
-	_ "hello/models"
-	_ "hello/routers"
+	 "hello/models"
+	"hello/routers"
 )
 
 func main() {
+	models.Init()
+	routers.AdminInit()
+	routers.IndexInit()
 	beego.Run()
 }

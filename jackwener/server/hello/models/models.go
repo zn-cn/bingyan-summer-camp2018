@@ -16,7 +16,7 @@ import(
 */
 
 // 在init函数中连接数据库，当导入该包的时候便执行此函数
-func init(){
+func Init(){
 	orm.RegisterDriver("mysql", orm.DRMySQL)
 	orm.RegisterDataBase("default", "mysql", "root:jakevin@tcp(localhost:3306)/project?charset=utf8")
 	orm.RegisterModel(new(class.User)) // 注册模型，建立User类型对象，注册模型时，需要引入包

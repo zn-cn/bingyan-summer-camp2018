@@ -16,7 +16,31 @@ type UserController struct {
 }
 
 func (c *UserController) PageLogin() {
-
+	err := c.GetSession("userPermission")
+	fmt.Print(err)
+	if err == nil{
+		fmt.Printf("没有session")
+		u := models.Info{}
+		u.Result = false
+		c.Data["json"] = u
+		c.ServeJSON()
+		return
+	} else if !strings.Contains(c.GetSession("userPermission").(string), "admin") {
+		fmt.Printf(c.GetSession("userPermission").(string))
+		fmt.Printf("没权限")
+		u := models.Info{}
+		u.Result = false
+		c.Data["json"] = u
+		c.ServeJSON()
+		return
+	} else {
+		fmt.Printf(c.GetSession("userPermission").(string))
+		fmt.Printf("有权限")
+		u := models.Info{}
+		u.Result = true
+		c.Data["json"] = u
+		c.ServeJSON()
+	}
 }
 
 //通过路由"/"，发送post请求，默认Json数据中User[0]的Name,Password为发送的信息值，返回的Json数据中Result:false与true说明了登录情况
@@ -26,10 +50,7 @@ func (c *UserController) Login() {
 	name := ob.User[0].Name
 	pwd := ob.User[0].Password
 	password := encryptions.Salt(pwd)//MD5加盐加密
-	u := class.User{
-		Name: name,
-		Password:password,
-	}
+	u := class.User{}
 	fmt.Print(u)
 	o := orm.NewOrm()
 	err := o.QueryTable("user").Exclude("status", "apply").Filter("name", name).Filter("password", password).One(&u)

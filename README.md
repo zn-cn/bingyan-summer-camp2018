@@ -343,7 +343,7 @@
 
 ### 1. 夏令营聚合
 
-+ 冰岩程序组夏令营：https://github.com/tofar/bingyan-summer-camp2018
++ 冰岩程序组夏令营：https://github.com/mu-mo/bingyan-summer-camp2018
 + 冰岩前端组夏令营：https://github.com/BingyanStudioFE/summber-camp-2018
 + 冰岩移动组夏令营: https://github.com/Liujiaohan/bingyan-summer-camp2018
 + 冰岩产品组夏令营：

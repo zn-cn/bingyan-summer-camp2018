@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>nickname</th>
+        <th>email</th>
+        <th>phone</th>
+        <th>group</th>
+        <th>status</th>
+        <th>删除</th>
+    </tr>
+{{range .posts}}
+    <tr>
+        <td>{{.Id}}</td>
+        <td>{{.Name}}</td>
+        <td>{{.Nickname}}</td>
+        <td>{{.Email}}</td>
+        <td>{{.Phone}}</td>
+        <td>{{.Group}}</td>
+        <td>{{.Status}}</td>
+        <td><form action="/user" method="post"><input type="submit" id={{.Id}} value="删除"><br></form></td>
+    </tr>
+{{end}}
+</table>
+<form action="/user" method="post">
+    请输入你想修改的信息用户<br>
+    ID(用来定位用户):<br>
+    <input type="text" name="id"><br>
+    用户名：<br>
+    <input type="text" name="username"><br>
+    昵称：<br>
+    <input type="text" name="nickname"><br>
+    手机号：<br>
+    <input type="text" name="phone"><br>
+    邮箱：<br>
+    <input type="text" name="email"><br>
+    组别：<br>
+    <input type="text" name="group"><br>
+    密码：<br>
+    <input type="text" name="password"><br>
+    <input type="submit" value="修改"><br>
+</form>
+</body>
+</html>

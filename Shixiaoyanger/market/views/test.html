@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="/static/js/jquery-3.3.1.js"></script>
+<script>
+
+$(document).ready(function(){
+	$("button").click(function(){
+		$("#div1").load("/v1/goods/view/latest");
+	});
+});
+
+</script>
+</head>
+
+<!--
+  
+$(document).ready(function(){
+	$("button").click(function(){
+		$.getJSON("/v1/goods/view/latest",function(data,status){
+			alert("数据: " + data + "\n状态: " + status);
+		});
+	});
+});
+-->
+
+<body>
+<h2 id = "div1">sdhuiahsduhasi</h2>
+  <button>发送一个 HTTP GET 请求并获取返回结果</button>
+  
+  </body>
+
+</body>
+</html>

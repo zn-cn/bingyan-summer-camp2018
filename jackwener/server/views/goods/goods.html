@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人页面</title>
+    <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js">
+    </script>
+</head>
+<body style="text-align: center" id="body">
+    <script>
+        function StringFormat() {
+         if (arguments.length == 0)
+             return null;
+         var str = arguments[0];
+         for (var i = 1; i < arguments.length; i++) {
+             var re = new RegExp('\\{' + (i - 1) + '\\}', 'gm');
+             str = str.replace(re, arguments[i]);
+         }
+         return str;
+        } 
+        $.get("/api/goods",function(date){
+            date = eval(date);
+            $.each(date.Good,function(n,value){
+                title =date.Good[n].Title;
+                
+                str = "<div id='name' style='height:250px;width:600px;float:left;'>"+"<img src=/img/"+title+".jpg width='200' height='200'><br>"+"<a href=/goods/good.html?title="+title+">"+title+"</a>"+"</div>" 
+
+                $("#body").append(str);
+            })
+        })
+    </script>
+</body>
+</html>

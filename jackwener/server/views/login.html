@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js">
+    </script>
+</head>
+<body style="text-align: center">
+<h1>登录</h1>
+<form id="login" action="/api/person">
+    name:<input id="name" type="text" name="name">
+    password:<input id="password" type="password" name="password"><br>
+    <input type="button" id="submit" value="submit"/><br>
+    <a href="register.html">没有账号？点我注册</a>
+</form>
+<script>
+    $(document).ready(function(){
+        $("#submit").on("click", function(){
+        var params = $("#login").serializeArray();
+            var j = {
+	        "User": {
+	    	"Id": "",
+	    	"Name": "",
+	    	"Password": "",
+	    	"Nickname": "",
+	    	"PageViews": 0
+        	},
+        	"Status": 0,
+        	"Message": ""
+            };
+            j.User.Name = $("#name").val();
+            j.User.Password = $("#password").val();
+            $.ajax({
+                    url:'/api/person',
+                    data:JSON.stringify(j),
+                    type:'post',
+                    dataType:'json',
+                    headers:{
+                        Accept:"application/json",
+                        "Content-Type":"application/json"
+                    },
+                    processData:false,
+                    cache:false,
+                    success:function(date){
+                        var json = eval(date);
+                        var message = json.Message;
+                        alert(message);
+                        if (message == "登录成功"){
+                            location.href = "/person/person.html?name="+$("#name").val();
+                        }
+                    }
+                }).done(function (data) {})
+               ;
+
+        });
+    });
+</script>
+</body>
+</html>

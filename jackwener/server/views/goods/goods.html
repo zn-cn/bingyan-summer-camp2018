@@ -7,6 +7,26 @@
     </script>
 </head>
 <body style="text-align: center" id="body">
+        <form action="">
+                <select id="kind" name="kind">
+                <option value="所有商品" selected>所有商品</option>
+                <option value="电子设备">电子设备</option>
+                <option value="书籍资料">书籍资料</option>
+                <option value="宿舍百货" >宿舍百货</option>
+                <option value="美妆护肤">美妆护肤</option>
+                <option value="女装">女装</option>
+                <option value="男装">男装</option>
+                </select>
+            </form>
+        <form action="">
+                <select id="local" name="local">
+                <option value="所有商品" selected>所有地区</option>
+                <option value="韵苑">韵苑地区</option>
+                <option value="沁苑">沁苑地区</option>
+                <option value="紫菘">紫菘地区</option>
+                </select>
+        </form>
+<p id="text"></p>
     <script>
         function StringFormat() {
          if (arguments.length == 0)
@@ -18,16 +38,99 @@
          }
          return str;
         } 
-        $.get("/api/goods",function(date){
-            date = eval(date);
-            $.each(date.Good,function(n,value){
-                title =date.Good[n].Title;
-                
-                str = "<div id='name' style='height:250px;width:600px;float:left;'>"+"<img src=/img/"+title+".jpg width='200' height='200'><br>"+"<a href=/goods/good.html?title="+title+">"+title+"</a>"+"</div>" 
+        
+        $(document).ready(function(){ 
+        $('#kind').change(function(){ 
+            var s=$(this).children('option:selected').val();
+            if  (s == "所有商品"){
 
-                $("#body").append(str);
+                $.get("/api/goods",function(date){
+                date = eval(date);
+                str = ""
+                $.each(date.Good,function(n,value){
+                title =date.Good[n].Title;
+                str += "<div id='name' style='height:250px;width:600px;float:left;'>"+"<img src=/img/"+title+".jpg width='200' height='200'><br>"+"<a href=/goods/good.html?title="+title+">"+title+"</a>"+"</div>" ;
+                     });
+                     $("#text").html(str);
+                })
+                
+            }
+            else {
+                j = {
+                    "Good": [{
+                            "Id": "",
+                            "Title": "",
+                            "Local": "",
+                            "Kind": s,
+                            "Intro": "",
+                            "Price": 0,
+                            "Cars": [null],
+                            "Views": 0
+                        }],
+                            "Status": 200,
+                            "Message": "",
+                            "Url": ""
+                            };
+                $.post("/api/goods/kind",JSON.stringify(j),function(date){
+                date = eval(date);
+                str = ""
+                $.each(date.Good,function(n,value){
+                title =date.Good[n].Title;
+                str += "<div id='name' style='height:250px;width:600px;float:left;'>"+"<img src=/img/"+title+".jpg width='200' height='200'><br>"+"<a href=/goods/good.html?title="+title+">"+title+"</a>"+"</div>" ;
+                 })
+                $("#text").html(str);
+        })
+            }
             })
         })
+
+        $(document).ready(function(){ 
+        $('#local').change(function(){ 
+            var s=$(this).children('option:selected').val();
+            if  (s == "所有商品"){
+
+                $.get("/api/goods",function(date){
+                date = eval(date);
+                str = ""
+                $.each(date.Good,function(n,value){
+                title =date.Good[n].Title;
+                str += "<div id='name' style='height:250px;width:600px;float:left;'>"+"<img src=/img/"+title+".jpg width='200' height='200'><br>"+"<a href=/goods/good.html?title="+title+">"+title+"</a>"+"</div>" ;
+                     });
+                     $("#text").html(str);
+                })
+                
+            }
+            else {
+                j = {
+                    "Good": [{
+                            "Id": "",
+                            "Title": "",
+                            "Local": s,
+                            "Kind": "",
+                            "Intro": "",
+                            "Price": 0,
+                            "Cars": [null],
+                            "Views": 0
+                        }],
+                            "Status": 200,
+                            "Message": "",
+                            "Url": ""
+                            };
+                $.post("/api/goods/local",JSON.stringify(j),function(date){
+                date = eval(date);
+                str = ""
+                $.each(date.Good,function(n,value){
+                title =date.Good[n].Title;
+                str += "<div id='name' style='height:250px;width:600px;float:left;'>"+"<img src=/img/"+title+".jpg width='200' height='200'><br>"+"<a href=/goods/good.html?title="+title+">"+title+"</a>"+"</div>" ;
+                 })
+                $("#text").html(str);
+        })
+            }
+            })
+        })
+
+        
+        
     </script>
 </body>
 </html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品页面</title>
+    <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js">
+    </script>
+</head>
+<body style="text-align: center">
+<h1>商品页面</h1>
+<p id="title">商品名: </p>
+<p id="local">地域: </p>
+<p id="kind">分类: </p>
+<p id="intro">介绍: </p>
+<p id="price">价格: </p>
+<p id="views">浏览量: </p>
+<script>
+    function getQueryString(key){
+    var reg = new RegExp("(^|&)"+key+"=([^&]*)(&|$)");
+    var result = window.location.search.substr(1).match(reg);
+    return result?decodeURIComponent(result[2]):null;
+    }
+    $.get("/api/goods/"+getQueryString('title'),function(date){
+        date = eval(date);
+        $("#title").append(date.Good[0].Title);
+        $("#local").append(date.Good[0].Local);
+        $("#kind").append(date.Good[0].Kind);
+        $("#intro").append(date.Good[0].Intro);
+        $("#price").append(date.Good[0].Price);
+        $("#views").append(date.Good[0].Views);
+        },"json")
+    
+</script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人页面</title>
+    <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js">
+    </script>
+</head>
+<body style="text-align: center">
+<h1>个人页面</h1>
+<p id="name">用户名: </p>
+<p id="nickname">昵称: </p>
+<p id="pageviews">浏览量: </p>
+<p><a href="/goods/goods.html">查看商品</a></p>
+<script>
+    function getQueryString(key){
+    var reg = new RegExp("(^|&)"+key+"=([^&]*)(&|$)");
+    var result = window.location.search.substr(1).match(reg);
+    return result?decodeURIComponent(result[2]):null;
+    }
+    var params = $("#register").serializeArray();
+            var j = {
+	        "User": {
+	    	"Id": "",
+	    	"Name": "",
+	    	"Password": "",
+	    	"Nickname": "",
+	    	"PageViews": 0
+        	},
+        	"Status": 0,
+        	"Message": ""
+            };
+    $.get("/api/person/"+getQueryString('name'),function(date){
+        date = eval(date);
+        $("#name").append(date.User.Name);
+        $("#nickname").append(date.User.Nickname);
+        $("#pageviews").append(date.User.PageViews);
+        },"json")
+    
+</script>
+
+</body>
+</html>

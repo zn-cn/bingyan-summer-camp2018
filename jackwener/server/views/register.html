@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js">
+    </script>
+</head>
+<body style="text-align: center">
+<h1>注册</h1>
+<form id="register" action="/api/person/register">
+    yourname:<input id="name" type="text" name="name"><br>
+    password:<input id="password" type="password" name="password"><br>
+    Nickname:<input id="nickname" type="text" name="nickname"><br>
+    <input type="button" id="submit" value="点击注册"/><br>
+    <a href="admin.html">返回登录页面</a>
+</form>
+<script>
+    $(document).ready(function(){
+        $("#submit").on("click", function(){
+        var params = $("#register").serializeArray();
+            var j = {
+	        "User": {
+	    	"Id": "",
+	    	"Name": "",
+	    	"Password": "",
+	    	"Nickname": "",
+	    	"PageViews": 0
+        	},
+        	"Status": 0,
+        	"Message": ""
+            };
+            j.User.Name = $("#name").val();
+            j.User.Password = $("#password").val();
+            j.User.Nickname = $("#nickname").val();
+            $.post("/api/person/register", JSON.stringify(j),
+            function(date){
+                alert(date.Message)
+            });
+        });
+    });
+</script>
+</body>
+</html>

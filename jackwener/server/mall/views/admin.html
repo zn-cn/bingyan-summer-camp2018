@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js">
+    </script>
+</head>
+<body style="text-align: center">
+<h1>登录</h1>
+<form id="login" action="/api/person">
+    name:<input id="name" type="text" name="name">
+    password:<input id="password" type="password" name="password"><br>
+    <input type="button" id="submit" value="submit"/>
+</form>
+<script>
+    $(document).ready(function(){
+        $("button").click(function(){
+        var params = $("#login").serializeArray();
+            var j = {
+                "Users": [{
+                "Id": 0,
+                "Name": "",
+                "Password": "",
+                "Nickname": "",
+                "PageViews": 0
+            }],
+                    "Goods": [],
+                    "Status": 0,
+                    "Url": ""
+            };
+            j.Users[0].Name = $("#name").val();
+            j.Users[0].Password = $("#password").val()
+        });
+    });
+</script>
+</body>
+</html>
